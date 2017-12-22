@@ -5,4 +5,20 @@
 	<p>
 	  <%= team.members %>
 	</p>
+	<p><a href="/teams/<%= team.name %>" class="btn btn-danger delete-link">Delete</a>
+	<a href="<%= team.name %>" class="btn btn-danger edit-link">Edit</a></p>
+	<div class="edit-team" id="edit-<%= team.name %>">
+	<h3>Edit Team</h3>
+	<form action="/teams/<%= team.name %>" id="put-form">
+		 <div class="form-group">
+  			<label for="teamName">Team Name</label>
+  			<input type="text" name="name" value="<%= team.name %>" class="form-control" >
+		</div>
+ 		<div class="form-group">
+  			<label for="teamMembers">Members</label>
+			<input type="text" name="members" value="<%= team.members %>" class="form-control" >
+		</div>
+  		<input type="submit" value="Update a team" class="btn btn-primary">
+	</form>
+	</div>
 </div>
